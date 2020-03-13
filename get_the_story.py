@@ -21,7 +21,8 @@ diskinfo = diskinfo.strip()
 meminfo = os.popen("free -m | grep '^Mem' | awk -F ' ' '{ print $2  }'")
 meminfo = meminfo.read()
 meminfo = meminfo.strip()
-meminfo = round(int(meminfo)/1000)
+meminfo = round(float(meminfo)/1024)
+#meminfo = float(meminfo)
 
 #get os info
 osinfo = os.popen("uname")
